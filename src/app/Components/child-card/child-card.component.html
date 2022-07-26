@@ -1,0 +1,39 @@
+
+  <table class="table  table-havor" >
+    <thead class="thead-dark" >
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>    
+        <th scope="col">Details</th>
+        <th scope="col">Items Count</th>
+        <th scope="col">Add to Card</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table"  *ngFor="let item of FilteredProducts" [ngStyle]="{'background-color': item.quantity==1?'yellow':'lightgray'}">
+        <ng-container *ngIf="item.quantity!=0">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td ><img [src]="item.image" style="width: 100px; height: 100px;"></td>
+        <td>{{item.price}}</td>
+        <td >{{item.quantity}}</td>
+<!-- by Router -->
+        <td><button type="button" class="btn btn-secondary " role="button" (click)="prodectDetails(item.id)">Details</button>
+<!-- by binding -->
+        <!-- <td><button type="button" class="btn btn-secondary " role="button" [routerLink]="['/ParentCard',item.ID]">Details</button> -->
+        <td><input #itemsCount type="number" class="form-control " ></td>
+     <td><button type="button" class="btn btn-secondary " (click)="addProductToCard(item.id,+itemsCount.value)">Add to Card </button>
+     </td> 
+      </ng-container>
+      </tr>
+      </tbody>
+      
+  </table>
+<br>
+
+<br>
+

@@ -1,0 +1,33 @@
+<!-- 
+  <table class="table  table-havor" [hidden]="isTableShown">
+    <thead class="thead-dark" >
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Count</th>
+        <th scope="col">Add to Card</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table"  *ngFor="let item of newProductList" [ngStyle]="{'background-color': item.Quantity==1?'yellow':'lightgray'}">
+        <ng-container *ngIf="item.Quantity!=0">
+        <td>{{item.ID}}</td>
+        <td>{{item.Name}}</td>
+        <td ><img [src]="item.Image" style="width: 100px; height: 100px;"></td>
+        <td>{{item.Price}}</td>
+        <td >{{item.Quantity}}</td>
+        <td><input #itemsCount type="number" class="form-control"></td>
+     <td><button type="button" class="btn btn-success m-3"  (click)="Decrease(item)">Add to Card </button>
+     </td> 
+      </ng-container>
+      </tr>
+      </tbody>
+      
+  </table>
+<br>
+
+<br> -->
